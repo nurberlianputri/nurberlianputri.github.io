@@ -1,13 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlian — Portofolio Teknik Informatika &amp; Komputer</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Selamat Datang di Website Pribadi Saya</h1>
-    <a href="index.html">Home</a> | <a href="about.html">Tentang Saya</a> | <a href="contact.html">Kontak</a>
-    <h2>Nama saya adalah Nur Berlian Putri</h2>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">&lt;Berlian <span>/</span>&gt;</a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul id="menu">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="tentang.html">Tentang Saya</a></li>
+      <li class="has-dropdown">
+        <a href="pengalaman.html">Pengalaman</a>
+        <ul class="dropdown">
+          <li><a href="pengalaman.html#proyek">Proyek</a></li>
+          <li><a href="pengalaman.html#organisasi">Semasa SMA</a></li>
+        </ul>
+      </li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO — background-image berlapis (Modul 4) ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Mahasiswa Prodi Teknik Komputer</p>
+      <img src="foto-profil.jpg" alt="Foto Berlian" class="avatar avatar-sm">
+      <h1>Belajar hari ini, mempersiapkan diri menjadi Network Engineer.</h1>
+      <p>
+        Saya Nur Berlian Putri, biasa dipanggil <strong>Berlian</strong>, mahasiswa Teknik Prodi Teknik Komputer
+        di Universitas Negeri Makassar yang sedang mengembangkan kemampuan di bidang teknologi. Saya tertarik
+        mempelajari jaringan komputer dan pemrograman web sebagai bagian dari perjalanan saya menuju dunia kerja.
+      </p>
+      <div class="grid-tags">
+        <span class="pill">Jaringan Komputer</span>
+        <span class="pill">HTML &amp; CSS</span>
+        <span class="pill">C &amp; C++</span>
+        <span class="pill">Basis Data</span>
+        <span class="pill">PHP / MySQL</span>
+      </div>
+      <div class="mt-lg">
+        <a href="pengalaman.html" class="btn btn-primary">Lihat Proyek Saya</a>
+        <a href="kontak.html" class="btn btn-ghost">Hubungi Saya</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span></div>
+      <div class="terminal-body">
+        <div><span class="muted">$</span> about me</div>
+        <div>berlian_tekom</div>
+        <div>&nbsp;</div>
+        <div><span class="k">const</span> mahasiswa = {</div>
+        <div>&nbsp;&nbsp;nama: <span class="s">"Nur Berlian Putri (Berlian)"</span>,</div>
+        <div>&nbsp;&nbsp;Nim: <span class="s">"250210500002"</span>,</div>
+        <div>&nbsp;&nbsp;Prodi: <span class="s">"Teknik Komputer"</span>,</div>
+        <div>&nbsp;&nbsp;Kampus: <span class="s">"Universitas Negeri Makassar"</span></div>
+        <div>};</div>
+        <div>&nbsp;</div>
+        <div><span class="muted">$</span> <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RINGKASAN — grouping class selector (Modul 3) ============ -->
+<section>
+  <div class="section-inner">
+    <p class="eyebrow">Yang sedang saya pelajari</p>
+    <h2>Belajar melalui tugas dan proyek</h2>
+    <div class="grid-3">
+      <div class="kartu">
+        <div class="kartu-body">
+          <h3>Pengembangan Web</h3>
+          <span class="periode">HTML · CSS · Struktur &amp; Layout</span>
+          <p>Mempelajari dasar pembuatan halaman web menggunakan HTML dan CSS,
+            mulai dari struktur halaman, layout, navigasi, hingga membuat tampilan yang lebih rapi.</p>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="kartu-body">
+          <h3>Basis Data &amp; Pemrograman</h3>
+          <span class="periode">PHP · MySQL · XAMPP</span>
+          <p>Mempelajari dasar pengelolaan data menggunakan PHP dan MySQL melalui tugas dan proyek
+            sederhana selama perkuliahan.</p>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="kartu-body">
+          <h3>Jaringan Komputer</h3>
+          <span class="periode">C · C++ · Arsitektur Komputer</span>
+          <p>Mempelajari dasar jaringan komputer dan memahami bagaimana perangkat dapat saling
+            terhubung serta berkomunikasi dalam sebuah jaringan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAKTA SINGKAT — layout klasik #leftcolumn/#rightcolumn dengan float (Modul 5) ============ -->
+<section>
+  <div class="section-inner">
+    <p class="eyebrow">Sekilas angka</p>
+    <h2>Fakta Singkat</h2>
+    <div class="float-wrapper">
+      <div id="leftcolumn">
+        <span class="angka">3+</span>
+        <span class="keterangan">Selama Perkuliahan</span>
+      </div>
+      <div id="rightcolumn">
+        <p style="margin:0;">
+          Selama perkuliahan, saya telah mengerjakan beberapa tugas dan proyek sederhana di bidang pemrograman web,
+          basis data, dan komputer. Setiap tugas menjadi kesempatan bagi saya untuk memahami materi dan mencoba
+          menerapkannya secara langsung.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KOTAK TRANSPARAN di atas background (Modul 4 Tugas Mandiri) ============ -->
+<section class="hero" style="min-height:auto; padding:6rem 6vw;">
+  <div class="section-inner text-center">
+    <div class="transparent-box">
+      <p class="eyebrow" style="text-align:center;">Prinsip saya</p>
+      <h2>Belajar sedikit demi sedikit, yang penting terus berkembang.</h2>
+      <p style="margin:0 auto; max-width:60ch;">
+        Saya percaya kemampuan tidak harus langsung sempurna. Dengan terus belajar,
+        mencoba, dan memperbaiki kesalahan, saya bisa berkembang sedikit demi sedikit.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Berlian — Prodi Teknik Komputer, Universitas Negeri Makassar</p>
+  <div class="sosial">
+    <a href="kontak.html">Email</a> · <a href="kontak.html">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const menu = document.getElementById('menu');
+  navToggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  document.querySelectorAll('#menu .has-dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 840) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

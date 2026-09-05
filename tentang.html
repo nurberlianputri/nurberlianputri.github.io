@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Saya — Berlian</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">&lt;Berlian <span>/</span>&gt;</a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="tentang.html">Tentang Saya</a></li>
+      <li class="has-dropdown">
+        <a href="pengalaman.html">Pengalaman</a>
+        <ul class="dropdown">
+          <li><a href="pengalaman.html#proyek">Proyek</a></li>
+          <li><a href="pengalaman.html#organisasi">Semasa SMA</a></li>
+        </ul>
+      </li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section style="padding-top:4rem;">
+  <p class="eyebrow section-inner">Kenali saya</p>
+  <h1 class="section-inner">Tentang Saya</h1>
+</section>
+
+<!-- ============ LAYOUT 2 KOLOM (Modul 5 — #leftcolumn / #rightcolumn) ============ -->
+<section style="padding-top:1rem;">
+  <div id="profil-wrapper">
+
+    <aside id="sidebar-kiri">
+      <!-- IMG dengan border, width/height, opacity:hover (Modul 4) -->
+      <img class="avatar"
+           src="foto-profil.jpg"
+           alt="Foto Berlian" style="margin:0 auto;">
+      <h3 style="margin-top:1.2rem;">Nur Berlian Putri</h3>
+      <p style="font-family:var(--mono); font-size:.85rem; color:var(--muted); margin:0;">"Berlian"</p>
+
+      <dl class="fakta">
+        <dt>Program Studi</dt>
+        <dd>Teknik Komputer</dd>
+        <dt>Kampus</dt>
+        <dd>Universitas Negeri Makassar</dd>
+        <dt>Fokus</dt>
+        <dd>Jaringan Komputer &amp; pemrograman</dd>
+        <dt>Status</dt>
+        <dd>Mahasiswa Semester 3</dd>
+      </dl>
+
+      <!-- Navigasi vertikal (Modul 5.b) -->
+      <div class="fakta" style="border-top:1px dashed var(--line); padding-top:1.2rem;">
+        <dt style="margin-top:0;">Jelajahi</dt>
+        <ul class="vnav" style="margin-top:.6rem;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pengalaman.html">Pengalaman</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div id="konten-kanan">
+      <h2>Sedikit cerita</h2>
+      <p>
+        Saya Berlian, akrab dipanggil <strong>Berlian</strong>, mahasiswa Teknik
+        Komputer di Universitas Negeri Makassar. Saat ini saya sedang belajar berbagai
+        hal di bidang teknologi, seperti pemrograman, basis data, dan jaringan komputer.
+      </p>
+      <p>
+        Dari berbagai hal yang saya pelajari, saya mulai tertarik dengan dunia jaringan komputer.
+        Saya ingin terus menambah pengetahuan dan pengalaman di bidang tersebut sebagai langkah untuk
+        mencapai cita-cita saya menjadi seorang Network Engineer.
+      </p>
+
+      <h2 class="mt-lg">Yang saya pelajari</h2>
+      <div class="skill-row">
+        <div class="skill-label"><span>HTML &amp; CSS</span><span>Struktur Halaman, Layout, Navigasi</span></div>
+        <div class="skill-bar"><span style="width:75%"></span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Jaringan Komputer</span><span>Dasar Jaringan, Komunikasi Antar Perangkat</span></div>
+        <div class="skill-bar"><span style="width:80%"></span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>C / C++</span><span>Logika Pemrograman, Struktur Program</span></div>
+        <div class="skill-bar"><span style="width:65%"></span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label"><span>Basis Data &amp; MySQL</span><span>Pengelolaan Data, Relasi Dan Database</span></div>
+        <div class="skill-bar"><span style="width:70%"></span></div>
+      </div>
+
+      <h2 class="mt-lg">Bidang Yang Saya Minati</h2>
+      <ul style="display:grid; grid-template-columns:1fr 1fr; gap:.6rem; list-style:none;">
+        <li class="pill" style="display:block; text-align:left;">Jaringan Komputer</li>
+        <li class="pill" style="display:block; text-align:left;">Hardware &amp; Komputer</li>
+        <li class="pill" style="display:block; text-align:left;">Pemrograman</li>
+        <li class="pill" style="display:block; text-align:left;">Teknologi Web</li>
+        <li class="pill" style="display:block; text-align:left;">Troubleshooting</li>
+        <li class="pill" style="display:block; text-align:left;">Keamanan Jaringan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Berlian — Prodi Teknik Komputer, Universitas Negeri Makassar</p>
+  <div class="sosial">
+    <a href="kontak.html">Email</a> · <a href="kontak.html">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const menu = document.getElementById('menu');
+  navToggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  document.querySelectorAll('#menu .has-dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 840) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontak — Berlian</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">&lt;Berlian <span>/</span>&gt;</a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tentang.html">Tentang Saya</a></li>
+      <li class="has-dropdown">
+        <a href="pengalaman.html">Pengalaman</a>
+        <ul class="dropdown">
+          <li><a href="pengalaman.html#proyek">Proyek</a></li>
+          <li><a href="pengalaman.html#organisasi">Semasa SMA</a></li>
+        </ul>
+      </li>
+      <li class="active"><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO dengan background-image + kotak transparan (Modul 4) ============ -->
+<section class="hero" style="min-height:auto; padding:6rem 6vw 2rem;">
+  <div class="section-inner text-center" style="margin:0 auto;">
+    <div class="transparent-box">
+      <p class="eyebrow" style="text-align:center;">Mari terhubung</p>
+      <h1>Hubungi Saya</h1>
+      <p style="margin:0 auto; max-width:60ch;">
+        Punya pertanyaan atau ingin berdiskusi? Jangan ragu untuk menghubungi saya.
+        Saya dengan senang hati akan merespons.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:2rem;">
+  <div class="section-inner" style="display:grid; grid-template-columns:1.1fr .9fr; gap:3rem;">
+
+    <!-- Form gaya KTP (Modul 3 - Tugas Mandiri "Form Pengisian KTP") -->
+    <div class="form-wrap" style="margin:0;">
+      <form>
+        <fieldset>
+          <legend>Formulir Pesan</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="hp">No. HP / WhatsApp</label>
+              <input type="tel" id="hp" name="hp" placeholder="08xx-xxxx-xxxx">
+            </div>
+            <div class="field">
+              <label for="subjek">Subjek</label>
+              <input type="text" id="subjek" name="subjek" placeholder="Kolaborasi / Diskusi Proyek">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- Info kontak — class selector digabung span/div (Modul 3) -->
+    <div>
+      <h2>Detail Kontak</h2>
+      <div class="kontak-info">
+        <div class="baris">
+          <span class="ikon">@</span>
+          <div>
+            <strong>Email</strong>
+            <p style="margin:0;">nurberlianputri01@email.com</p>
+          </div>
+        </div>
+        <div class="baris">
+          <span class="ikon">#</span>
+          <div>
+            <strong>Kampus</strong>
+            <p style="margin:0;">Universitas Negeri Makassar</p>
+          </div>
+        </div>
+        <div class="baris">
+          <span class="ikon">&gt;_</span>
+          <div>
+            <strong>GitHub</strong>
+            <p style="margin:0;">nurberlianputri.github.io</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-tags mt-lg">
+        <span class="pill">Respon cepat lewat email</span>
+        <span class="pill">Terbuka untuk diskusi</span>
+      </div>
+
+      <!-- Aligned Dropdown Content (Modul 6 - Tugas Mandiri): satu dropdown rata kiri, satu rata kanan -->
+      <h3 class="mt-lg">Preferensi</h3>
+      <div class="align-dropdown-row">
+        <div class="align-dropdown kiri">
+          <button class="dropbtn2">Bahasa: Indonesia</button>
+          <div class="align-dropdown-content">
+            <a href="#">Indonesia</a>
+            <a href="#">English</a>
+          </div>
+        </div>
+        <div class="align-dropdown kanan">
+          <button class="dropbtn2">Unduh CV</button>
+          <div class="align-dropdown-content">
+            <a href="#">Format PDF</a>
+            <a href="#">Format DOCX</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Berlian — Prodi Teknik Komputer, Universitas Negeri Makassar</p>
+  <div class="sosial">
+    <a href="kontak.html">Email</a> · <a href="kontak.html">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const menu = document.getElementById('menu');
+  navToggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  document.querySelectorAll('#menu .has-dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 840) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  document.querySelector('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Terima kasih! Pesan Anda telah tercatat (form demo — hubungkan ke backend/PHP untuk pengiriman sungguhan).');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
