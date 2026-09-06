@@ -23,24 +23,6 @@ Dibangun sebagai bagian dari pembelajaran HTML & CSS di kelas **TEKOM D**.
 - Formulir kontak sederhana (demo, belum terhubung ke backend)
 - Desain gelap (dark theme) dengan aksen warna amber
 
-## Teknologi
-
-- HTML5
-- CSS3 (custom properties / CSS variables, Flexbox, Grid, Float)
-- Vanilla JavaScript (untuk interaksi menu & dropdown)
-
-## Cara Menjalankan
-
-1. Clone atau download repository ini.
-2. Buka file `index.html` langsung di browser, **atau**
-3. Jalankan lewat live server (mis. ekstensi *Live Server* di VS Code) untuk pengalaman terbaik.
-
-\`\`\`bash
-git clone <url-repo-ini>
-cd Portofolio
-# buka index.html di browser
-\`\`\`
-
 ## Catatan
 
 Proyek ini merupakan dokumentasi pembelajaran Git dan pengembangan web statis
