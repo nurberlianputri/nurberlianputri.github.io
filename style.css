@@ -610,3 +610,37 @@ legend{
 .text-center{ text-align:center; }
 .mt-lg{ margin-top:3rem; }
 .grid-tags{ margin-top:1.2rem; }
+
+
+/* =============================================================
+   TAMBAHAN UNTUK JAVASCRIPT (script.js)
+   Bagian ini hanya mengatur tampilan efek-efek dari script.js.
+   ============================================================= */
+
+/* ---------- 1. Terminal mengetik ---------- */
+/* Saat sedang mengetik, kursor tidak berkedip (seperti terminal asli) */
+.terminal-body.mengetik .cursor{ animation:none; }
+
+/* ---------- 2. Skill bar terisi pelan-pelan ---------- */
+.skill-bar > span{
+  transition:width 1.1s cubic-bezier(.22,1,.36,1);
+}
+
+/* ---------- 3. Kartu muncul saat di-scroll ---------- */
+/* .reveal = keadaan awal (tersembunyi & agak turun)
+   .tampil = keadaan akhir (terlihat jelas) — ditambahkan oleh JavaScript */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .6s ease, transform .6s ease, border-color .2s ease;
+}
+.reveal.tampil{
+  opacity:1;
+  transform:none;
+}
+
+/* Hormati pengguna yang mematikan animasi di perangkatnya */
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  .skill-bar > span{ transition:none; }
+}
